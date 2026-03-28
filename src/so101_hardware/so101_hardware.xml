@@ -1,0 +1,9 @@
+<library path="so101_hardware">
+  <class name="so101_hardware/STS3215HardwareInterface"
+         type="so101_hardware::STS3215HardwareInterface"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      ROS 2 hardware interface for Feetech STS3215 servos on the SO101 arm.
+    </description>
+  </class>
+</library>

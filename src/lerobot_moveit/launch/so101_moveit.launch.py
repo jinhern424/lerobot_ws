@@ -25,7 +25,7 @@ def generate_launch_description():
 
     moveit_config = (
             MoveItConfigsBuilder("so101", package_name="lerobot_moveit")
-            .robot_description(file_path=so101_urdf_path)
+            .robot_description(file_path=so101_urdf_path, mappings={"use_sim": is_sim})
             .robot_description_semantic(file_path="config/so101.srdf")
             .trajectory_execution(file_path="config/moveit_controllers.yaml")
             .to_moveit_configs()
@@ -51,7 +51,8 @@ def generate_launch_description():
         parameters=[moveit_config.robot_description, 
                     moveit_config.robot_description_semantic,
                     moveit_config.robot_description_kinematics,
-                    moveit_config.joint_limits]
+                    moveit_config.joint_limits,
+                    {"use_sim_time": is_sim}]
     )
 
     return LaunchDescription([

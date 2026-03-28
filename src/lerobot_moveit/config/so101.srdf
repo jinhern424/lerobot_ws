@@ -68,4 +68,7 @@ are defined
     <disable_collisions link1="wrist" link2="gripper" reason="Adjacent" />
     <disable_collisions link1="wrist" link2="jaw" reason="Never" />
     <disable_collisions link1="gripper" link2="jaw" reason="Adjacent" />
+    <disable_collisions link1="camera_link" link2="gripper" reason="Adjacent" />
+    <disable_collisions link1="camera_link" link2="wrist" reason="Never" />
+    <disable_collisions link1="camera_link" link2="jaw" reason="Never" />
 </robot>

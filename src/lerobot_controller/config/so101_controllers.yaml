@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 10 # Hz
+    update_rate: 100 # Hz
 
     arm_controller:
       type: joint_trajectory_controller/JointTrajectoryController
@@ -28,6 +28,7 @@ arm_controller:
 
     state_interfaces:
       - position
+      - velocity
 
     open_loop_control: true
     allow_integration_in_goal_trajectories: true
@@ -36,13 +37,14 @@ gripper_controller:
   ros__parameters:
     joints:
       - "6"
-    interface_name: position
+    # interface_name: position
       
     command_interfaces:
       - position
 
     state_interfaces:
       - position
+      - velocity
 
     open_loop_control: true
     allow_integration_in_goal_trajectories: true
